@@ -52,7 +52,7 @@ def imputar_nulos(df):
             df[nombre_columna_numerica].fillna(media, inplace=True)
             print(f"Nulos en '{nombre_columna_numerica}' imputados con la media ({media:.2f})")
 
-def detectar_duplicados(dfe):
+def detectar_duplicados(df):
     numero_duplicados = df.duplicated().sum()
     print(f"Filas duplicadas completas en el dataset: {numero_duplicados}")
     if numero_duplicados > 0:
