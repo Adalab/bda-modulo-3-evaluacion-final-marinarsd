@@ -89,3 +89,15 @@ def resumen_medidas(df):
             print(f"  Moda: {moda[0]}")
         else:
             print(f"  Moda (varias): {list(moda)}")
+
+def mostrar_estadisticas_descriptivas(df):
+    print("=== ESTADÍSTICAS DESCRIPTIVAS ===")
+    
+    # Seleccionar solo columnas numéricas
+    columnas_numericas = df.select_dtypes(include='number')
+    
+    # Calcular describe() y redondear
+    resumen = columnas_numericas.describe().round(2)
+    
+    # Mostrar
+    display(resumen)
